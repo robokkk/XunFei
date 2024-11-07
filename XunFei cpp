@@ -1,0 +1,51 @@
+#include <iostream>
+#include <cmath>
+
+class Vector 
+{
+private:
+    double x;
+    double y;
+
+public:
+    Vector(double x_init, double y_init) 
+    {
+        x = x_init, y = y_init;
+    }
+
+    Vector add(Vector& v2)  
+    {
+        return Vector(x + v2.x, y + v2.y);
+    }
+
+    void print()  
+    {
+        std::cout << "(" << x << ", " << y << ")" << std::endl;
+    }
+
+    void len()  
+    {
+        double LEN = std::sqrt(x * x + y * y);
+        std::cout << "模长为： " << LEN << std::endl;
+    }
+};
+
+int main() {
+    Vector v1(4.0, 12.0);
+    Vector v2(78.0, 9.0);
+
+    std::cout << "v1: ";
+    v1.print();
+
+    std::cout << "v2: ";
+    v2.print();
+
+    vector v3 = v1.add(v2);
+    std::cout << "v3: ";
+    v3.print();
+
+    std::cout << "v3模长为: ";
+    v3.len();
+
+    return 0;
+}
