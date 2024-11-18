@@ -1,0 +1,17 @@
+import socket
+
+s = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+
+s.connect(('127.0.0.1',12345))
+
+while True:
+    str = input("#:3")
+    str2 = input("#:4")
+    if(str == ""):
+        break
+
+    s.send(str.encode('utf-8'))
+    s.send(str2.encode('utf-8'))
+
+s.close()
+
