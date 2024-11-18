@@ -1,0 +1,26 @@
+#include<iostream>
+using namespace std;
+int main() {
+    int a;
+    cout << "请选择你要输入的数字类型" << endl;
+    cout << "1--整数" << endl;
+    cout << "2--小数" << endl;
+    cout << "3--分数" << endl;
+    cout << "4--百分数" << endl;
+    cin >> a;
+    switch (a) {
+    case 1:
+        int n;
+        cout << "请输入一个整数" << endl;
+        cin >> n;
+        while (n) {
+            printf("%d", n % 10);
+            n /= 10;
+        }
+        break;
+
+    }
+    return 0;
+
+}
+
